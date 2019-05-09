@@ -1,0 +1,19 @@
+<!-- templates/article_detail.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="article-entry">
+
+         <h2><span class="font-weight-bold text-primary">{{ article.title }}</span> &middot;</h2>
+                <p><span class="text-muted"> Posted by {{ article.author }} | {{ article.date }}</span></p>
+
+        <p>{{ object.body }}</p>
+
+        <p><a href="{% url 'article_edit' article.pk %}"><span class="text-secondary">Edit</span></a></p>
+        <p><a href="{% url 'article_delete' article.pk %}"><span class="text-danger">Delete</span></a></p>
+        <p>Back to <a href="{% url 'article_list' %}"><span class="text-primary">All Articles</span></a></p>
+        
+    </div>
+    
+{% endblock content %}
